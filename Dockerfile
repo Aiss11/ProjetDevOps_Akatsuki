@@ -1,7 +1,6 @@
-FROM php:7.2-apache
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
-COPY . /var/www/html/
+FROM php:8.2-rc-apache
+RUN docker-php-ext-install pdo_mysql && docker-php-ext-enable pdo_mysql
+RUN apt-get update && apt-get upgrade -y
+WORKDIR /var/www/html
+COPY ./apply/* apply/
 EXPOSE 80
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-RUN apt-get update -y && apt-get upgrade -y libmariadb-dev
-RUN docker-php-ext-install mysqli
