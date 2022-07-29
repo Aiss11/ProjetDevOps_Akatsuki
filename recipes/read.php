@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-include_once('./../config/mysql.php');
-include_once('./../config/user.php');
-include_once('./../variables.php');
+include_once('mysql.php');
+include_once('user.php');
+include_once('variables.php');
 
 $getData = $_GET;
 if (!isset($getData['id']) && is_numeric($getData['id']))
@@ -55,7 +55,7 @@ foreach($recipeWithComments as $comment) {
 <body class="d-flex flex-column min-vh-100">
     <div class="container">
 
-    <?php include_once($rootPath.'/apply/header.php'); ?>
+    <?php include_once($rootPath.'header.php'); ?>
         <h1><?php echo($recipe['title']); ?></h1>
         <div class="row">
             <article class="col">
@@ -80,9 +80,9 @@ foreach($recipeWithComments as $comment) {
         <?php endif; ?>
         <hr />
         <?php if (isset($loggedUser)) : ?>
-            <?php include_once($rootPath.'/apply/comments/create.php'); ?>
+            <?php include_once($rootPath.'create.php'); ?>
         <?php endif; ?>
     </div>
-    <?php include_once($rootPath.'/apply/footer.php'); ?>
+    <?php include_once($rootPath.'footer.php'); ?>
 </body>
 </html>
