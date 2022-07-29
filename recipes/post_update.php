@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-include_once('./../config/mysql.php');
-include_once('./../config/user.php');
-include_once('./../variables.php');
+include_once('mysql.php');
+include_once('user.php');
+include_once('variables.php');
 
 $postData = $_POST;
 
@@ -45,7 +45,7 @@ $insertRecipeStatement->execute([
 <body class="d-flex flex-column min-vh-100">
     <div class="container">
 
-    <?php include_once($rootPath.'/header.php'); ?>
+    <?php include_once($rootPath.'header.php'); ?>
         <h1>Recette modifiée avec succès !</h1>
         
         <div class="card">
@@ -57,6 +57,6 @@ $insertRecipeStatement->execute([
             </div>
         </div>
     </div>
-    <?php include_once($rootPath.'/footer.php'); ?>
+    <?php include_once($rootPath.'footer.php'); ?>
 </body>
 </html>
