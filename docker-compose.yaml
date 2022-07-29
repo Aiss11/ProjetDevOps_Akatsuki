@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  php-apache-environment:
+    container_name: app_siterecette
+    build:
+      context: ./site
+      dockerfile: Dockerfile
+    depends_on:
+      - database-env
+    ports:
+      - 8000:80
+  database-env:
+    container_name: bd_siterecette
+    build: 
+      context: ./site1
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+        - "9906:3306"
