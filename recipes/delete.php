@@ -1,8 +1,8 @@
 <?php session_start();
 
-include_once('./../config/mysql.php');
-include_once('./../config/user.php');
-include_once('./../variables.php');
+include_once('mysql.php');
+include_once('user.php');
+include_once('variables.php');
 
 $getData = $_GET;
 ?>
@@ -21,9 +21,9 @@ $getData = $_GET;
 <body class="d-flex flex-column min-vh-100">
     <div class="container">
 
-    <?php include_once($rootPath.'/apply/header.php'); ?>
+    <?php include_once($rootPath.'header.php'); ?>
         <h1>Supprimer la recette ?</h1>
-        <form action="<?php echo($rootUrl . 'recipes/post_delete.php'); ?>" method="POST">
+        <form action="<?php echo($rootUrl . 'post_delete.php'); ?>" method="POST">
             <div class="mb-3 visually-hidden">
                 <label for="id" class="form-label">Identifiant de la recette</label>
                 <input type="hidden" class="form-control" id="id" name="id" value="<?php echo($getData['id']); ?>">
@@ -34,6 +34,6 @@ $getData = $_GET;
         <br />
     </div>
 
-    <?php include_once($rootPath.'/apply/footer.php'); ?>
+    <?php include_once($rootPath.'footer.php'); ?>
 </body>
 </html>
