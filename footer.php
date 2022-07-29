@@ -3,5 +3,5 @@
     © 2021 Copyright:
     <a class="text-dark" href="">AkatsukiTeam</a>
   </div>
-  <?php //include_once($rootPath.'/viewed_pages.php'); ?>
+  <?php //include_once($rootPath.'viewed_pages.php'); ?>
 </footer>
